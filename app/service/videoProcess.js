@@ -9,7 +9,6 @@ module.exports = app => {
     // vFilePath 文件路径
     * getInfo(vFilePath) {
       let data = yield new Promise((resolve, reject)=> {
-        // '/Users/linti791/webstorm/koa/egg-ffmpeg/app/public/test-vedio.mp4'
         ffmpeg.ffprobe(vFilePath,function(err, metadata) {
           console.log(require('util').inspect(metadata, false, null));
           if (err) return resolve(0);

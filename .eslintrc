@@ -1,3 +1,44 @@
 {
-  "extends": "eslint-config-egg"
+  "env": {
+      "browser": true,
+      "es6": true,
+      "commonjs": false
+  },
+  "extends": "airbnb",
+  "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "generators": true
+  },
+  "sourceType": "module",
+  "parser": "babel-eslint",
+  "plugins": ["html"],
+  "rules": {
+      "indent": [
+          2,
+          4
+      ],
+      "no-param-reassign": [2, {"props": false}],
+      "no-debugger": "off",
+      "max-len": [2, 150, 4, {
+          "ignoreUrls": true,
+          "ignoreComments": false,
+          "ignoreRegExpLiterals": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true
+      }]
+  },
+  "settings": {
+      "import/resolver": {
+          "webpack": {
+              "config": "webpack.config.js"
+          }
+      }
+  },
+  "globals": {
+      "window": true,
+      "document": true,
+      "location": true,
+      "Owl": true,
+      "LXAnalytics": true
+  }
 }
